@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <section class="rounded-2xl bg-emerald-200 bg-yellow-200 h-[500px] py-4 px-8 flex flex-col items-center justify-center" id="hp-banner-discount">
+    <div class="text-4xl font-bold text-center">{{ 'homepage.discount.message' | translate }}</div>
+    <div class="text-xl mt-2">{{ 'homepage.discount.code' | translate }}</div>
+    <p-button [label]="'homepage.discount.cta' | translate" [rounded]="true" class="mt-4" severity="info"/>
+  </section>
+
+  <section class="mt-14 p-0">
+    <app-custom-products-carousel [items]="productForSlider()" [responsiveOptions]="responsiveOptions"/>
+  </section>
+</div>

@@ -3,10 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "agenda-dashboard": {
+    "fakezon-store": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "skipTests": true,
           "style": "scss"
         }
       },
@@ -21,13 +22,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/app.scss"
             ]
           },
           "configurations": {
@@ -58,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "agenda-dashboard:build:production"
+              "buildTarget": "fakezon-store:build:production"
             },
             "development": {
-              "buildTarget": "agenda-dashboard:build:development"
+              "buildTarget": "fakezon-store:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +76,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/",
+                "output": "/assets/"
               }
             ],
             "styles": [

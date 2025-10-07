@@ -1,0 +1,18 @@
+<div class="container flex justify-between items-center py-4 px-8 bg-white rounded-full">
+  <div class="text-3xl font-bold cursor-pointer" [routerLink]="['/']">{{logo}}</div>
+
+  <div class="flex items-center">
+    <app-button-change-languages class="me-2"/>
+
+    <p-button [rounded]="true" [text]="true" severity="secondary" class="me-2">
+      <app-icon [name]="ICON.cart"/>
+    </p-button>
+
+
+    <p-button [rounded]="true" [text]="true" severity="secondary" (onClick)="menu.toggle($event)">
+      <app-icon [name]="ICON.user"  />
+    </p-button>
+    <p-menu #menu [model]="itemsLink" [popup]="true" appendTo="body"/>
+
+  </div>
+</div>

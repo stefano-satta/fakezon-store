@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "tailwindcss";
+@config "../../tailwind.config.js";
+@import "primeicons/primeicons.css";
+@plugin "tailwindcss-primeui";
+
+body {
+  @apply text-gray-900;
+}
+
+#hp-banner-discount {
+  background-image: url('../assets/img/view-banner-discount.png');
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  background-size: 45%;
+}

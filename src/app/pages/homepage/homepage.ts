@@ -1,0 +1,60 @@
+import {Component, inject, OnInit, signal} from '@angular/core';
+import {Button} from 'primeng/button';
+import {TranslatePipe} from '@ngx-translate/core';
+import {ProductService} from '../../services/product-service';
+import {finalize} from 'rxjs';
+import {CustomProductsCarousel} from '../../components/common/custom-products-carousel/custom-products-carousel';
+
+
+@Component({
+  selector: 'app-homepage',
+  imports: [
+    Button,
+    TranslatePipe,
+    CustomProductsCarousel
+  ],
+  templateUrl: './homepage.html',
+  styleUrl: './homepage.scss'
+})
+export class Homepage implements OnInit {
+  productService = inject(ProductService);
+  productForSlider = signal<Product[]>([]);
+  responsiveOptions = [
+    {
+      breakpoint: '1400px',
+      numVisible: 2,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '1199px',
+      numVisible: 2,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '575px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+  ];
+
+  ngOnInit(): void {
+    this.getAllProductsForSlider();
+  }
+
+
+  getAllProductsForSlider() {
+    this.productService.getAllProducts()
+      .pipe(finalize(() => {
+          this.productForSlider.set(this.productService.allProducts().slice(0, 6));
+        })
+      )
+      .subscribe(products => {
+      this.productService.allProducts.set(products);
+    })
+  }
+}
