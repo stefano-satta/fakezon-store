@@ -26,12 +26,13 @@ export class Navbar implements OnInit {
   protected itemsLink: MenuItem[] | undefined;
   protected readonly Icon = Icon;
   protected readonly ICON = ICON;
-  translateService = inject(TranslateService);
+  protected translateService = inject(TranslateService);
 
   ngOnInit() {
-    this.translateService.get('navbar.user').subscribe((user: {profile: string, logout: string}) => {
+    this.translateService.get('navbar.user').subscribe((user: UserMenuItem) => {
       this.itemsLink = [
         { label: `${user.profile}`, icon: `pi ${ICON.userProfile}`, routerLink: '/user/profile'},
+        { label: `${user.orders}`, icon: `pi ${ICON.orders}`, routerLink: '/user/profile'},
         { label: `${user.logout}`, icon: `pi ${ICON.logout}`, command: () => {}}
       ];
     });

@@ -1,0 +1,11 @@
+<div class="container flex flex-wrap justify-around mb-8">
+  @for (item of categories(); track item.id) {
+    <div class="bg-white rounded-2xl text-center py-6 px-4 flex-auto mb-2 not-last:me-6 cursor-pointer hover:bg-neutral-50"
+         tabindex="0"
+         role="button"
+         aria-pressed="false"
+        (click)="filterProductsByCategory(item.category)">
+      {{ translateCategories(item.category) }}
+    </div>
+  }
+</div>

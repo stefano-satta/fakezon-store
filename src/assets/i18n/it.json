@@ -2,8 +2,16 @@
   "navbar": {
     "user": {
       "profile": "Profilo",
-      "order": "Ordini",
+      "orders": "Ordini",
       "logout": "Esci"
+    }
+  },
+  "product": {
+    "categories": {
+      "electronics": "Elettronica",
+      "jewelery": "Gioielli",
+      "men's clothing": "Abbigliamento uomo",
+      "women's clothing": "Abbigliamento donna"
     }
   },
   "homepage": {

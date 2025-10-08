@@ -4,6 +4,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 import {ProductService} from '../../services/product-service';
 import {finalize} from 'rxjs';
 import {CustomProductsCarousel} from '../../components/common/custom-products-carousel/custom-products-carousel';
+import {Categories} from '../../components/common/categories/categories';
 
 
 @Component({
@@ -11,7 +12,8 @@ import {CustomProductsCarousel} from '../../components/common/custom-products-ca
   imports: [
     Button,
     TranslatePipe,
-    CustomProductsCarousel
+    CustomProductsCarousel,
+    Categories
   ],
   templateUrl: './homepage.html',
   styleUrl: './homepage.scss'
@@ -56,5 +58,9 @@ export class Homepage implements OnInit {
       .subscribe(products => {
       this.productService.allProducts.set(products);
     })
+  }
+
+  copyDiscount() {
+    //TO DO: add discount clipboard
   }
 }
