@@ -26,7 +26,7 @@ export class CustomProductsCarousel {
   protected cartService = inject(CartService);
 
   addProductToCart(product: Product) {
-    this.cartService.addProduct(product);
+    this.cartService.addProduct({...product, quantity: Number(product.quantity! + 1)});
   }
 
 }

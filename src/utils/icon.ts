@@ -9,4 +9,5 @@ export const ICON = {
   trash: 'pi-trash',
   plus: 'pi-plus',
   minus: 'pi-minus',
+  reset: 'pi-undo'
 }

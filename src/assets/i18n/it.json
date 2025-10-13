@@ -14,7 +14,11 @@
       "electronics": "Elettronica",
       "jewelery": "Gioielli",
       "men's clothing": "Abbigliamento uomo",
-      "women's clothing": "Abbigliamento donna"
+      "women's clothing": "Abbigliamento donna",
+      "reset": "Tutti i prodotti"
+    },
+    "page": {
+      "title": "Prodotti"
     }
   },
   "cart": {

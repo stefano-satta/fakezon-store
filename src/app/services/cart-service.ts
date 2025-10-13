@@ -25,7 +25,20 @@ export class CartService extends AbstractHttpService implements OnInit {
   }
 
   addProduct(product: Product) {
-    this.cart.update(prevCart => [...prevCart, product]);
+    // TODO
+    const alreadyInTheCart = this.cart().some(cart => cart.id === product.id);
+    let updatedCart: Product[] = [];
+    if (alreadyInTheCart) {
+      console.log('dentro cart')
+      updatedCart = this.cart().map((prod: Product) => {
+        return (prod.id === product.id) ? {...prod, quantity: Number(prod.quantity! + 1)} : prod;
+      })
+
+      this.cart.set(updatedCart);
+    } else {
+      this.cart.update(prevCart => [...prevCart, product]);
+    }
+
     this.messageService.add({severity: 'info', summary: 'Info', detail: this.translateService.instant('cart.added_to_cart')});
     console.log(this.cart());
   }
