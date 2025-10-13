@@ -5,6 +5,8 @@ import {Homepage} from './pages/homepage/homepage';
 import {ProductDetailsPage} from './pages/product-details-page/product-details-page';
 import {UserProfile} from './pages/user-profile/user-profile';
 import {AllProductsSearch} from './pages/all-products-search/all-products-search';
+import {CartPage} from './pages/cart-page/cart-page';
+import {ErrorMaintenance} from './pages/error-maintenance-page/error-maintenance';
 
 
 export const routes: Routes = [
@@ -13,10 +15,12 @@ export const routes: Routes = [
     component:  BaseLayout,
     children: [
       { path: '', component:  Homepage },
+      { path: 'cart', component:  CartPage },
       { path: 'product/search', component:  AllProductsSearch },
       { path: 'product/:id', component:  ProductDetailsPage },
       { path: 'user/profile', component:  UserProfile },
     ]
   },
-  { path: '**', component: NotFoundError}
+  { path: 'error-maintenance', component: ErrorMaintenance},
+  { path: '**', component: NotFoundError},
 ];

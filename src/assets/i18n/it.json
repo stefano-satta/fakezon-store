@@ -1,10 +1,13 @@
 {
   "navbar": {
-    "user": {
+    "user_menu": {
       "profile": "Profilo",
       "orders": "Ordini",
       "logout": "Esci"
     }
+  },
+  "user": {
+    "head_message": "Bentornato {{ fullname }}!"
   },
   "product": {
     "categories": {
@@ -12,6 +15,22 @@
       "jewelery": "Gioielli",
       "men's clothing": "Abbigliamento uomo",
       "women's clothing": "Abbigliamento donna"
+    }
+  },
+  "cart": {
+    "title": "Carrello",
+    "added_to_cart": "Prodotto aggiunto al carrello",
+    "summary": "Riepilogo",
+    "delivery_cost": "Spedizione",
+    "sub_total": "Subtotale",
+    "total": "Totale",
+    "empty_no_products": "Carrello vuoto",
+    "buy": "Acquista"
+  },
+  "modal": {
+    "grateful_payment": {
+      "title": "Fake ordine effettuato!",
+      "message": ""
     }
   },
   "homepage": {

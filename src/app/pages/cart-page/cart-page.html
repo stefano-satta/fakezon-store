@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <h2 class="text-3xl py-4 px-8 font-medium">{{ 'cart.title' | translate }}</h2>
+
+  <ng-container>
+    @if (!currentCart().length) {
+      <div class="bg-white py-4 px-8 rounded-2xl">{{ 'cart.empty_no_products' | translate }}</div>
+    } @else {
+      <div class="flex flex-wrap">
+        <div class="bg-white rounded-2xl me-3 flex-1">
+          @for(item of currentCart(); track item.id) {
+            <div class="flex flex-row items-center justify-start px-8 py-6">
+              <div class="w-20">
+                <img [src]="item.image" alt="" />
+              </div>
+              <div class="flex flex-col px-8 w-full">
+                <h3 class="text-lg">{{ item.title }}</h3>
+                <div class="flex justify-between mt-3 items-center">
+                  <div class="flex-1 font-medium text-lg">{{ item.price | currency: 'EUR' }}</div>
+                  <div class="w-45 flex items-center">
+                    <p-button [rounded]="true" [text]="true" severity="danger" (click)="remove(item.id)" class="me-3">
+                      <app-icon [name]="ICON.trash"/>
+                    </p-button>
+                    <p-inputnumber [(ngModel)]="item.quantity"
+                                   [showButtons]="true"
+                                   buttonLayout="horizontal"
+                                   inputId="horizontal"
+                                   spinnerMode="horizontal"
+                                   [step]="1"
+                                   [min]="1"
+                                   [max]="10"
+                                   size="small"
+                                   fluid
+                                   (onInput)="onChangeProdQuantity(item.id, $event)">
+                      <ng-template #incrementbuttonicon >
+                        <app-icon [name]="ICON.plus"/>
+                      </ng-template>
+                      <ng-template #decrementbuttonicon>
+                        <app-icon [name]="ICON.minus"/>
+                      </ng-template>
+                    </p-inputnumber>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+        <div class="bg-white rounded-2xl w-100 h-100 px-8 py-6 sticky top-[30px]">
+          <h3 class="mb-8 text-2xl font-medium">{{ 'cart.summary' | translate }}</h3>
+          <div class="flex justify-between mb-4">
+            <span>{{ 'cart.sub_total' | translate }}:</span>
+            <span>{{ getTotal() | currency:'EUR':'symbol':'1.2-2':'it-IT' }}</span>
+          </div>
+          <div class="flex justify-between mb-4">
+            <span>{{ 'cart.delivery_cost' | translate }}:</span>
+            <span>{{ '0' | currency:'EUR':'symbol':'1.2-2':'it-IT' }}</span>
+          </div>
+          <hr>
+          <div class="flex justify-between mt-4 mb-8">
+            <span class="font-bold text-xl">{{ 'cart.total' | translate }}:</span>
+            <span class="font-bold text-xl">{{ getTotal() | currency:'EUR':'symbol':'1.2-2':'it-IT' }}</span>
+          </div>
+          <p-button [label]="'cart.buy' | translate" [rounded]="true" severity="info" fluid (click)="showModalPayment()" />
+          <app-payment-method/>
+        </div>
+      </div>
+    }
+  </ng-container>
+
+
+
+
+</div>

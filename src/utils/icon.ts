@@ -6,4 +6,7 @@ export const ICON = {
   userProfile: 'pi-cog',
   logout: 'pi-sign-out',
   loading: 'pi-spin pi-spinner',
+  trash: 'pi-trash',
+  plus: 'pi-plus',
+  minus: 'pi-minus',
 }

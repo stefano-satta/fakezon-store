@@ -1,8 +1,7 @@
-import {Component, inject, OnInit, signal} from '@angular/core';
+import {Component, computed, inject, OnInit} from '@angular/core';
 import {Button} from 'primeng/button';
 import {TranslatePipe} from '@ngx-translate/core';
 import {ProductService} from '../../services/product-service';
-import {finalize} from 'rxjs';
 import {CustomProductsCarousel} from '../../components/common/custom-products-carousel/custom-products-carousel';
 import {Categories} from '../../components/common/categories/categories';
 
@@ -20,7 +19,7 @@ import {Categories} from '../../components/common/categories/categories';
 })
 export class Homepage implements OnInit {
   productService = inject(ProductService);
-  productForSlider = signal<Product[]>([]);
+  productForSlider = computed(() => this.productService.allProducts().slice(0, 6));
   responsiveOptions = [
     {
       breakpoint: '1400px',
@@ -44,20 +43,7 @@ export class Homepage implements OnInit {
     },
   ];
 
-  ngOnInit(): void {
-    this.getAllProductsForSlider();
-  }
-
-
-  getAllProductsForSlider() {
-    this.productService.getAllProducts()
-      .pipe(finalize(() => {
-          this.productForSlider.set(this.productService.allProducts().slice(0, 6));
-        })
-      )
-      .subscribe(products => {
-      this.productService.allProducts.set(products);
-    })
+  ngOnInit() {
   }
 
   copyDiscount() {

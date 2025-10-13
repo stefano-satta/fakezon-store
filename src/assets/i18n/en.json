@@ -1,10 +1,13 @@
 {
   "navbar": {
-    "user": {
+    "user_menu": {
       "profile": "Profile",
       "orders": "Orders",
       "logout": "Logout"
     }
+  },
+  "user": {
+    "head_message": "Welcome {{ fullname }}!"
   },
   "product": {
     "categories": {
@@ -12,6 +15,22 @@
       "jewelery": "Jewelery",
       "men's clothing": "Men's clothing",
       "women's clothing": "Women's clothing"
+    }
+  },
+  "cart": {
+    "title": "Cart",
+    "added_to_cart": "Product added to cart",
+    "summary": "Summary",
+    "delivery_cost": "Delivery",
+    "sub_total": "Subtotal",
+    "total": "Total",
+    "empty_no_products": "Empty cart",
+    "buy": "Buy"
+  },
+  "modal": {
+    "grateful_payment": {
+      "title": "Fake orders success!",
+      "message": ""
     }
   },
   "homepage": {

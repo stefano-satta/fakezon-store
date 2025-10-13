@@ -1,0 +1,22 @@
+<!--<p-dialog header="Edit Profile" [modal]="true" [(visible)]="true" [style]="{ width: '25rem' }">
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center gap-2">
+      <div>{{ title() }}</div>
+    </div>
+  </ng-template>
+  <div>
+    {{ message() }}
+  </div>
+  <ng-template #footer>
+    <p-button label="Cancel" [text]="true" severity="secondary" (click)="onCancel()" />
+    <p-button label="Save" [outlined]="true" severity="secondary" (click)="onConfirm()" />
+  </ng-template>
+</p-dialog>-->
+
+<div>
+  {{message()}}
+</div>
+<div>
+  <p-button label="Cancel" [text]="true" severity="secondary" (click)="onCancel()" />
+  <p-button label="Save" [outlined]="true" severity="secondary" (click)="onConfirm()" />
+</div>

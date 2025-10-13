@@ -1,9 +1,10 @@
-import {Component, input} from '@angular/core';
+import {Component, inject, input} from '@angular/core';
 import {Carousel, CarouselResponsiveOptions} from 'primeng/carousel';
 import {Button} from 'primeng/button';
 import {CurrencyPipe} from '@angular/common';
 import {Icon} from '../icon/icon';
 import {ICON} from '../../../../utils/icon';
+import {CartService} from '../../../services/cart-service';
 
 @Component({
   selector: 'app-custom-products-carousel',
@@ -22,4 +23,10 @@ export class CustomProductsCarousel {
   circularCarousel = input<boolean>(false);
   responsiveOptions = input<CarouselResponsiveOptions[]>();
   protected readonly ICON = ICON;
+  protected cartService = inject(CartService);
+
+  addProductToCart(product: Product) {
+    this.cartService.addProduct(product);
+  }
+
 }

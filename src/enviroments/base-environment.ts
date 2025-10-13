@@ -7,5 +7,7 @@ export const baseEnvironment = {
     /* fake store api */
     GET_ALL_PRODUCTS: '/products',
     GET_PRODUCT_BY_ID: '/products/:id',
+    GET_USER: '/users/:id',
+    GET_CART: '/carts/:id'
   }
 }
