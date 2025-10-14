@@ -1,4 +1,4 @@
-import {Component, computed, effect, inject, OnInit} from '@angular/core';
+import {Component, computed, inject, OnInit} from '@angular/core';
 import {ProductService} from '../../../services/product-service';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
@@ -16,8 +16,6 @@ export class Categories implements OnInit {
   categories = computed(() => [...new Set(this.productService.allProducts().map(product => product.category.trim()))]
     .map((category, index) => ({id: index+1, category})));
 
-  zio = effect(() => console.log(this.categories()))
-
   ngOnInit(): void {
   }
 
@@ -25,9 +23,7 @@ export class Categories implements OnInit {
     return this.translateService.instant(`product.categories.${category}`);
   }
 
-
-
   filterProductsByCategory(category: string) {
-     this.router.navigate(['/product/search'], {queryParams: {category}});
+    this.router.navigate(['/product/search'], {queryParams: {category}});
   }
 }

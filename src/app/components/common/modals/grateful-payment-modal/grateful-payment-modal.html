@@ -13,10 +13,12 @@
   </ng-template>
 </p-dialog>-->
 
-<div>
-  {{message()}}
+<div class="text-center mt-3">
+  {{ message() }}
 </div>
-<div>
-  <p-button label="Cancel" [text]="true" severity="secondary" (click)="onCancel()" />
-  <p-button label="Save" [outlined]="true" severity="secondary" (click)="onConfirm()" />
+<div class="flex items-center justify-center mt-10">
+  @if (cancelAction()) {
+    <p-button [label]="'modal.grateful_payment.cancel' | translate" [text]="true" severity="secondary" (click)="onCancel()" class="me-5"/>
+  }
+  <p-button [label]="'modal.grateful_payment.go_website' | translate" rounded severity="info" (click)="onConfirm()" />
 </div>

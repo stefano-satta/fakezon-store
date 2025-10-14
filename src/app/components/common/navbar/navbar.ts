@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, computed, inject, OnInit} from '@angular/core';
+import {Component, computed, inject, OnInit} from '@angular/core';
 import {environment} from '../../../../enviroments/enviroment';
 import {RouterLink} from '@angular/router';
 import {Icon} from '../icon/icon';
@@ -19,7 +19,8 @@ import {CartService} from '../../../services/cart-service';
     Menu,
     ButtonChangeLanguages,
     Button,
-    Badge
+    Badge,
+    TranslatePipe
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
@@ -27,7 +28,6 @@ import {CartService} from '../../../services/cart-service';
 export class Navbar implements OnInit {
   protected readonly logo = environment.app.title;
   protected itemsLink: MenuItem[] | undefined;
-  protected readonly Icon = Icon;
   protected readonly ICON = ICON;
   protected translateService = inject(TranslateService);
   protected cartService = inject(CartService);

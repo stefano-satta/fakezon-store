@@ -7,7 +7,6 @@ import {InputNumber, InputNumberInputEvent} from 'primeng/inputnumber';
 import {Icon} from '../../components/common/icon/icon';
 import {ICON} from '../../../utils/icon';
 import {Button} from 'primeng/button';
-import {ProductService} from '../../services/product-service';
 import {PaymentMethod} from '../../components/common/payment-method/payment-method';
 import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {GratefulPaymentModal} from '../../components/common/modals/grateful-payment-modal/grateful-payment-modal';
@@ -28,7 +27,6 @@ import {GratefulPaymentModal} from '../../components/common/modals/grateful-paym
 })
 export class CartPage implements OnInit, OnDestroy {
   private readonly cartService = inject(CartService);
-  private readonly productService = inject(ProductService);
   private readonly dialogService = inject(DialogService);
   private readonly translateService = inject(TranslateService);
   protected currentCart = computed(() => this.cartService.cart());
@@ -37,7 +35,6 @@ export class CartPage implements OnInit, OnDestroy {
   private refDialog: DynamicDialogRef | undefined;
 
   ngOnInit(): void {
-    console.log('close ', this.refDialog?.close());
   }
 
   remove(idProduct: number) {
@@ -45,7 +42,6 @@ export class CartPage implements OnInit, OnDestroy {
   }
 
   onChangeProdQuantity(idProduct: number, qty: InputNumberInputEvent) {
-    console.log('change qty ', qty)
     this.cartService.changeQuantityProductById(idProduct, Number(qty.value));
   }
 
@@ -54,15 +50,22 @@ export class CartPage implements OnInit, OnDestroy {
       header: this.translateService.instant('modal.grateful_payment.title'),
       modal: true,
       closable: true,
-      width: '50%',
+      width: '40vw',
+      breakpoints: {
+        '960px': '50vw',
+        '640px': '90vw'
+      },
       baseZIndex: 10000,
       inputValues: {
-        message: 'Sei sicuro di voler eliminare questo elemento dal carrello?',
+        message: this.translateService.instant('modal.grateful_payment.message'),
+        cancelAction: false
       },
     });
 
     this.refDialog?.onClose.subscribe((result) => {
-      console.log('onClose !', result);
+      if(result.confirmed) {
+        window.open('https://stefanosatta.vercel.app/', '_blank');
+      }
     });
   }
 

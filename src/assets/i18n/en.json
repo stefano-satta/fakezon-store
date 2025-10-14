@@ -4,6 +4,10 @@
       "profile": "Profile",
       "orders": "Orders",
       "logout": "Logout"
+    },
+    "menu": {
+      "home": "Home",
+      "product_search": "Products"
     }
   },
   "user": {
@@ -34,7 +38,9 @@
   "modal": {
     "grateful_payment": {
       "title": "Fake orders success!",
-      "message": ""
+      "message": "Thank you! If you liked this project visit my site, let's get in touch 🚀",
+      "cancel": "Cancel",
+      "go_website": "Go to my website"
     }
   },
   "homepage": {
@@ -42,7 +48,7 @@
       "message": "GET UP TO 50% OFF",
       "code": "OFF50",
       "cta": "GET DISCOUNT",
-      "message_clipboard": "{{ discount }} has been copied!"
+      "message_clipboard": "{{ discount }} has been copied 📝"
     }
   }
 }

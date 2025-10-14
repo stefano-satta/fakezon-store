@@ -6,7 +6,7 @@ import {CurrencyPipe} from '@angular/common';
 import {Icon} from '../../components/common/icon/icon';
 import {ICON} from '../../../utils/icon';
 import {CartService} from '../../services/cart-service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Categories} from '../../components/common/categories/categories';
 
 @Component({
@@ -24,6 +24,7 @@ import {Categories} from '../../components/common/categories/categories';
 export class AllProductsSearch implements OnInit {
   private readonly productService = inject(ProductService);
   private readonly cartService = inject(CartService);
+  private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   protected readonly ICON = ICON;
   protected getAllProds = computed(() => this.productService.allProducts());
@@ -56,6 +57,7 @@ export class AllProductsSearch implements OnInit {
   }
 
   resetCategory() {
-    this.filteredProducts.set(this.getAllProds());
+    /*this.filteredProducts.set(this.getAllProds());*/
+    this.router.navigate(['/product/search']);
   }
 }

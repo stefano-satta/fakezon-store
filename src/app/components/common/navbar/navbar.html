@@ -1,6 +1,11 @@
 <div class="container flex justify-between items-center py-4 px-8 bg-white rounded-full">
   <div class="text-3xl font-bold cursor-pointer" [routerLink]="['/']">{{logo}}</div>
 
+  <ul class="hidden md:flex justify-between items-center">
+    <li class="me-3"><a [routerLink]="'/'">{{'navbar.menu.home' | translate}}</a></li>
+    <li><a [routerLink]="'/product/search'">{{'navbar.menu.product_search' | translate}}</a></li>
+  </ul>
+
   <div class="flex items-center">
     <app-button-change-languages class="me-2"/>
 
