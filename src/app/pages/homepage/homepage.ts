@@ -1,9 +1,16 @@
-import {Component, computed, inject, OnInit} from '@angular/core';
+import {
+  Component,
+  computed,
+  inject,
+  OnInit, signal,
+} from '@angular/core';
 import {Button} from 'primeng/button';
 import {TranslatePipe} from '@ngx-translate/core';
 import {ProductService} from '../../services/product-service';
 import {CustomProductsCarousel} from '../../components/common/custom-products-carousel/custom-products-carousel';
 import {Categories} from '../../components/common/categories/categories';
+import {CopyClipboard} from '../../directive/copy-clipboard';
+import {Popover} from 'primeng/popover';
 
 
 @Component({
@@ -12,14 +19,17 @@ import {Categories} from '../../components/common/categories/categories';
     Button,
     TranslatePipe,
     CustomProductsCarousel,
-    Categories
+    Categories,
+    CopyClipboard,
+    Popover
   ],
   templateUrl: './homepage.html',
   styleUrl: './homepage.scss'
 })
 export class Homepage implements OnInit {
-  productService = inject(ProductService);
-  productForSlider = computed(() => this.productService.allProducts().slice(0, 6));
+  private readonly productService = inject(ProductService);
+  protected readonly productForSlider = computed(() => this.productService.allProducts().slice(0, 6));
+  protected msgDiscountPopover = signal<string>('');
   responsiveOptions = [
     {
       breakpoint: '1400px',
@@ -46,7 +56,7 @@ export class Homepage implements OnInit {
   ngOnInit() {
   }
 
-  copyDiscount() {
-    //TO DO: add discount clipboard
+  notifyMsgDiscountPopover(text: string) {
+    this.msgDiscountPopover.set(text);
   }
 }

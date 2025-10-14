@@ -41,7 +41,8 @@
     "discount": {
       "message": "GET UP TO 50% OFF",
       "code": "OFF50",
-      "cta": "GET DISCOUNT"
+      "cta": "GET DISCOUNT",
+      "message_clipboard": "{{ discount }} has been copied!"
     }
   }
 }

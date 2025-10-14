@@ -13,12 +13,12 @@ import {provideHttpClient} from '@angular/common/http';
 import {provideTranslateService} from '@ngx-translate/core';
 import {provideTranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ConfirmationService, MessageService} from 'primeng/api';
-
 import localeIT from '@angular/common/locales/it';
 import {registerLocaleData} from '@angular/common';
 import {ConfirmDialog} from 'primeng/confirmdialog';
-import {DialogService, DynamicDialogModule} from 'primeng/dynamicdialog';
+import {DialogService} from 'primeng/dynamicdialog';
 import {Dialog} from 'primeng/dialog';
+
 
 registerLocaleData(localeIT);
 

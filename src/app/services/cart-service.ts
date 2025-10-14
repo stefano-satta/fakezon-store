@@ -25,7 +25,6 @@ export class CartService extends AbstractHttpService implements OnInit {
   }
 
   addProduct(product: Product) {
-    // TODO
     const alreadyInTheCart = this.cart().some(cart => cart.id === product.id);
     let updatedCart: Product[] = [];
     if (alreadyInTheCart) {
@@ -40,6 +39,7 @@ export class CartService extends AbstractHttpService implements OnInit {
     }
 
     this.messageService.add({severity: 'info', summary: 'Info', detail: this.translateService.instant('cart.added_to_cart')});
+    this.totalToPay();
     console.log(this.cart());
   }
 

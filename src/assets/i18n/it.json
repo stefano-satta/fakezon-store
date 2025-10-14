@@ -41,7 +41,8 @@
     "discount": {
       "message": "OTTIENI SUBITO 50% DI SCONTO",
       "code": "OFF50",
-      "cta": "COPIA SCONTO"
+      "cta": "COPIA SCONTO",
+      "message_clipboard": "{{ discount }} è stato copiato!"
     }
   }
 }
