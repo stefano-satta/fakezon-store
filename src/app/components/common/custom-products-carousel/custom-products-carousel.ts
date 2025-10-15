@@ -1,7 +1,7 @@
 import {Component, inject, input} from '@angular/core';
 import {Carousel, CarouselResponsiveOptions} from 'primeng/carousel';
 import {Button} from 'primeng/button';
-import {CurrencyPipe} from '@angular/common';
+import {CurrencyPipe, NgOptimizedImage} from '@angular/common';
 import {Icon} from '../icon/icon';
 import {ICON} from '../../../../utils/icon';
 import {CartService} from '../../../services/cart-service';
@@ -12,7 +12,8 @@ import {CartService} from '../../../services/cart-service';
     Carousel,
     Button,
     CurrencyPipe,
-    Icon
+    Icon,
+    NgOptimizedImage
   ],
   templateUrl: './custom-products-carousel.html',
   styleUrl: './custom-products-carousel.scss'

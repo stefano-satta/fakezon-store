@@ -8,19 +8,9 @@
     <div class="m-2 p-6 bg-white rounded-2xl">
       <div class="mb-4">
         <div class="relative mx-auto">
-          <img [src]="product.image" [alt]="product.title" class="h-[300px] w-full rounded-border object-contain " />
-          <!--<p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" class="absolute" [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />-->
+          <img [ngSrc]="product.image" [alt]="product.title" class="h-[300px] w-full rounded-border object-contain" width="10" height="10"/>
         </div>
       </div>
-      <!--<div class="mt-10 font-medium">{{ product.title }}</div>
-      <div class="flex justify-between items-center">
-        <div class="mt-5 font-semibold text-xl">{{ product.price | currency: 'EUR' }}</div>
-        <span>
-          <p-button severity="info">
-            <app-icon [name]="ICON.addToCart"/>
-          </p-button>
-        </span>
-      </div>-->
       <div class="flex flex-col justify-between items-between h-[150px]">
         <div class="mt-10 font-medium">{{ product.title }}</div>
         <div class="flex justify-between items-center mt-4">
@@ -35,5 +25,3 @@
     </div>
   </ng-template>
 </p-carousel>
-
-
