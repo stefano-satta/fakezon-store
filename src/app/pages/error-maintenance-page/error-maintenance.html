@@ -1,1 +1,9 @@
-<p>error-maintenance-page works!</p>
+<div class="container py-4 px-8 rounded-2xl bg-white h-[calc(100vh-32px)] flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center self-stretch">
+    <app-icon [name]="ICON.warning" iconSize="xl" class="text-orange-400"/>
+    <span class="text-2xl mt-2">{{ 'maintenance_error_page.title' | translate }}</span>
+    <p-button [rounded]="true" severity="info" (click)="tryToHomepage()" class="mt-6">
+      {{ 'maintenance_error_page.go_homepage' | translate}}
+    </p-button>
+  </div>
+</div>

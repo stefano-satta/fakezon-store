@@ -32,7 +32,8 @@
     "delivery_cost": "Delivery",
     "sub_total": "Subtotal",
     "total": "Total",
-    "empty_no_products": "Empty cart",
+    "empty_no_products": "Oops! Empty cart",
+    "go_catalog_products": "Go to catalog",
     "buy": "Buy"
   },
   "modal": {
@@ -50,5 +51,13 @@
       "cta": "GET DISCOUNT",
       "message_clipboard": "{{ discount }} has been copied 📝"
     }
+  },
+  "not_found_error_page": {
+    "title": "We looooost!",
+    "go_homepage": "Go Home"
+  },
+  "maintenance_error_page": {
+    "title": "Sorry! Work in progress",
+    "go_homepage": "Go Home"
   }
 }

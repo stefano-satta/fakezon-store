@@ -10,6 +10,7 @@ import {Button} from 'primeng/button';
 import {PaymentMethod} from '../../components/common/payment-method/payment-method';
 import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {GratefulPaymentModal} from '../../components/common/modals/grateful-payment-modal/grateful-payment-modal';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
@@ -29,6 +30,7 @@ export class CartPage implements OnInit, OnDestroy {
   private readonly cartService = inject(CartService);
   private readonly dialogService = inject(DialogService);
   private readonly translateService = inject(TranslateService);
+  private readonly router = inject(Router);
   protected currentCart = computed(() => this.cartService.cart());
   protected getTotal = computed(() => this.cartService.totalToPayCart());
   protected readonly ICON = ICON;
@@ -67,6 +69,10 @@ export class CartPage implements OnInit, OnDestroy {
         window.open('https://stefanosatta.vercel.app/', '_blank');
       }
     });
+  }
+
+  goToCalog() {
+    this.router.navigate(['/product/search']);
   }
 
   ngOnDestroy() {

@@ -1,1 +1,9 @@
-<p>not-found works!</p>
+<div class="container py-4 px-8 rounded-2xl bg-white h-[calc(100vh-32px)] flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center self-stretch">
+    <div class="text-[100px] font-bold">404</div>
+    <div class="text-2xl">{{ 'not_found_error_page.title' | translate }}</div>
+    <p-button [rounded]="true" severity="info" (click)="tryToHomepage()" class="mt-6">
+      {{ 'not_found_error_page.go_homepage' | translate}}
+    </p-button>
+  </div>
+</div>

@@ -32,7 +32,8 @@
     "delivery_cost": "Spedizione",
     "sub_total": "Subtotale",
     "total": "Totale",
-    "empty_no_products": "Carrello vuoto",
+    "empty_no_products": "Oops! Carrello vuoto",
+    "go_catalog_products": "Vai al catalogo",
     "buy": "Acquista"
   },
   "modal": {
@@ -50,5 +51,13 @@
       "cta": "COPIA SCONTO",
       "message_clipboard": "{{ discount }} è stato copiato 📝"
     }
+  },
+  "not_found_error_page": {
+    "title": "Ci siamo persi!",
+    "go_homepage": "Vai alla home"
+  },
+  "maintenance_error_page": {
+    "title": "Sito in manutenzione",
+    "go_homepage": "Vai alla home"
   }
 }

@@ -3,7 +3,13 @@
 
   <ng-container>
     @if (!currentCart().length) {
-      <div class="bg-white py-4 px-8 rounded-2xl">{{ 'cart.empty_no_products' | translate }}</div>
+      <div class="bg-white py-4 px-8 rounded-2xl min-h-[600px] flex flex-col items-center justify-center">
+        <app-icon [name]="ICON.cart" iconSize="md"/>
+        <span class="text-2xl">{{ 'cart.empty_no_products' | translate }}</span>
+        <p-button [rounded]="true" severity="info" (click)="goToCalog()" class="me-3 mt-5">
+          {{ 'cart.go_catalog_products' | translate}}
+        </p-button>
+      </div>
     } @else {
       <div class="flex flex-wrap">
         <div class="bg-white rounded-2xl me-3 flex-1">
