@@ -1,0 +1,63 @@
+{
+  "navbar": {
+    "user_menu": {
+      "profile": "Profile",
+      "orders": "Orders",
+      "logout": "Logout"
+    },
+    "menu": {
+      "home": "Home",
+      "product_search": "Products"
+    }
+  },
+  "user": {
+    "head_message": "Welcome {{ fullname }}!"
+  },
+  "product": {
+    "categories": {
+      "electronics": "Electronics",
+      "jewelery": "Jewelery",
+      "men's clothing": "Men's clothing",
+      "women's clothing": "Women's clothing",
+      "reset": "Reset category"
+    },
+    "page": {
+      "title": "Products"
+    }
+  },
+  "cart": {
+    "title": "Cart",
+    "added_to_cart": "Product added to cart",
+    "summary": "Summary",
+    "delivery_cost": "Delivery",
+    "sub_total": "Subtotal",
+    "total": "Total",
+    "empty_no_products": "Oops! Empty cart",
+    "go_catalog_products": "Go to catalog",
+    "buy": "Buy"
+  },
+  "modal": {
+    "grateful_payment": {
+      "title": "Fake orders success!",
+      "message": "Thank you! If you liked this project visit my site, let's get in touch 🚀",
+      "cancel": "Cancel",
+      "go_website": "Go to my website"
+    }
+  },
+  "homepage": {
+    "discount": {
+      "message": "GET UP TO 50% OFF",
+      "code": "OFF50",
+      "cta": "GET DISCOUNT",
+      "message_clipboard": "{{ discount }} has been copied 📝"
+    }
+  },
+  "not_found_error_page": {
+    "title": "We looooost!",
+    "go_homepage": "Go Home"
+  },
+  "maintenance_error_page": {
+    "title": "Sorry! Work in progress",
+    "go_homepage": "Go Home"
+  }
+}
