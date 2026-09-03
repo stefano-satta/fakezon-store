@@ -10,6 +10,9 @@
       "product_search": "Prodotti"
     }
   },
+  "actions": {
+    "change_language": "Cambia lingua"
+  },
   "user": {
     "head_message": "Bentornato {{ fullname }}!",
     "orders": {

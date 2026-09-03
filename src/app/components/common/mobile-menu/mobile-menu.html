@@ -1,0 +1,44 @@
+<p-drawer [(visible)]="isOpenDrawer" position="right" header="Fakezon" styleClass="w-full! sm:w-96! md:w-md! lg:w-120! h-100">
+  <div class="flex flex-col justify-between items-between h-full">
+    <ul class="flex flex-col justify-between items-center mt-40">
+      <li class="text-2xl">
+        <a [routerLink]="'/'"
+           class="hover:underline"
+           (click)="toggleDrawer()">
+          {{'navbar.menu.home' | translate}}
+        </a>
+      </li>
+      <li class="text-2xl mt-12">
+        <a [routerLink]="'/product/search'"
+           class="hover:underline"
+           (click)="toggleDrawer()">
+          {{'navbar.menu.product_search' | translate}}
+        </a>
+      </li>
+    </ul>
+
+    <div class="">
+      <div class="flex mb-6">
+        <div class="bg-slate-100 rounded-2xl text-center py-6 px-4 flex-auto mb-2 not-last:me-6 cursor-pointer hover:bg-slate-300"
+             tabindex="0"
+             role="button"
+             aria-pressed="false"
+             (click)="goToProfilePage()">
+          {{'navbar.user_menu.profile' | translate }}
+        </div>
+        <div class="bg-slate-100 rounded-2xl text-center py-6 px-4 flex-auto mb-2 not-last:me-6 cursor-pointer hover:bg-slate-300"
+             tabindex="0"
+             role="button"
+             aria-pressed="false"
+             (click)="goToOrdersPage()">
+          {{'navbar.user_menu.orders' | translate }}
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <app-button-change-languages [labelText]="true" (click)="toggleDrawer()"/>
+      </div>
+    </div>
+
+
+  </div>
+</p-drawer>

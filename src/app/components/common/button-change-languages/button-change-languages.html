@@ -1,3 +1,6 @@
 <p-button [rounded]="true" [text]="true" severity="secondary" (onClick)="changeLanguage()">
+  @if(labelText()) {
+    <span>{{ 'actions.change_language' | translate }}</span>
+  }
   <img [src]="setFlag()" [alt]="setAltTextImg()" width="30" height="30">
 </p-button>

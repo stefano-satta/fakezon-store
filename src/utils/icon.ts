@@ -1,6 +1,7 @@
 export const ICON = {
   user: 'pi-user',
   cart: 'pi-shopping-cart',
+  mobileMenu: 'pi-bars',
   orders: 'pi-box',
   addToCart: 'pi-cart-plus',
   userProfile: 'pi-cog',

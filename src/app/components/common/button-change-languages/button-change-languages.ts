@@ -1,18 +1,20 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, input, OnInit} from '@angular/core';
 import {Button} from 'primeng/button';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {FLAGS} from '../../../../utils/flags';
 
 @Component({
   selector: 'app-button-change-languages',
   imports: [
-    Button
+    Button,
+    TranslatePipe
   ],
   templateUrl: './button-change-languages.html',
   styleUrl: './button-change-languages.scss'
 })
 export class ButtonChangeLanguages implements OnInit {
   translateService = inject(TranslateService);
+  labelText = input<boolean>(false);
   currentLanguage = '';
 
   ngOnInit() {

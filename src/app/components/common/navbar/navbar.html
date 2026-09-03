@@ -6,8 +6,8 @@
     <li><a [routerLink]="'/product/search'" class="hover:underline">{{'navbar.menu.product_search' | translate}}</a></li>
   </ul>
 
-  <div class="flex items-center">
-    <app-button-change-languages class="me-2"/>
+  <div class="flex items-center justify-end">
+    <app-button-change-languages class="hidden md:flex me-2"/>
 
     <p-button [rounded]="true" [text]="true" severity="secondary" class="me-2" [routerLink]="'/cart'">
       @if (numProdInTheCart() > 0) {
@@ -16,10 +16,14 @@
       <app-icon [name]="ICON.cart" iconSize="md"/>
     </p-button>
 
-    <p-button [rounded]="true" [text]="true" severity="secondary" (click)="menu.toggle($event)">
+    <p-button [rounded]="true" [text]="true" severity="secondary" (click)="menu.toggle($event)" class="hidden md:flex">
       <app-icon [name]="ICON.user" iconSize="md"/>
     </p-button>
     <p-menu #menu [model]="itemsLink" [popup]="true" appendTo="body"/>
 
+    <p-button [rounded]="true" [text]="true" severity="secondary" class="flex md:hidden items-center" (onClick)="toggleDrawer()">
+      <app-icon [name]="ICON.mobileMenu" iconSize="md"/>
+    </p-button>
+    <app-mobile-menu [(isOpenDrawer)]="isOpenDrawer"></app-mobile-menu>
   </div>
 </div>

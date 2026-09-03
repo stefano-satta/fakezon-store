@@ -1,4 +1,4 @@
-import {Component, computed, inject, OnInit} from '@angular/core';
+import {Component, computed, inject, OnInit, signal} from '@angular/core';
 import {environment} from '../../../../enviroments/enviroment';
 import {RouterLink} from '@angular/router';
 import {Icon} from '../icon/icon';
@@ -10,6 +10,8 @@ import {ButtonChangeLanguages} from '../button-change-languages/button-change-la
 import {Button} from 'primeng/button';
 import {Badge} from 'primeng/badge';
 import {CartService} from '../../../services/cart-service';
+import {DrawerModule} from 'primeng/drawer';
+import {MobileMenu} from '../mobile-menu/mobile-menu';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +22,9 @@ import {CartService} from '../../../services/cart-service';
     ButtonChangeLanguages,
     Button,
     Badge,
-    TranslatePipe
+    TranslatePipe,
+    DrawerModule,
+    MobileMenu
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
@@ -32,15 +36,21 @@ export class Navbar implements OnInit {
   protected translateService = inject(TranslateService);
   protected cartService = inject(CartService);
   numProdInTheCart = computed(() => this.cartService.cart().length);
+  isOpenDrawer = signal<boolean>(false);
 
   ngOnInit() {
-    this.translateService.get('navbar.user_menu').subscribe((user: UserMenuItem) => {
-      console.log('log ',user)
-      this.itemsLink = [
-        { label: `${user.profile}`, icon: `pi ${ICON.userProfile}`, routerLink: '/user/profile'},
-        { label: `${user.orders}`, icon: `pi ${ICON.orders}`, routerLink: '/user/orders'},
-        { label: `${user.logout}`, icon: `pi ${ICON.logout}`, command: () => {}}
-      ];
+    this.translateService.stream('navbar.user_menu')
+      .subscribe((user: UserMenuItem) => {
+        console.log('log ',user)
+        this.itemsLink = [
+          { label: `${user.profile}`, icon: `pi ${ICON.userProfile}`, routerLink: '/user/profile'},
+          { label: `${user.orders}`, icon: `pi ${ICON.orders}`, routerLink: '/user/orders'},
+          { label: `${user.logout}`, icon: `pi ${ICON.logout}`, command: () => {}}
+        ];
     });
+  }
+
+  toggleDrawer() {
+    this.isOpenDrawer.update( prevState => !prevState );
   }
 }
