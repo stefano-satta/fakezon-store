@@ -38,7 +38,7 @@ export class Navbar implements OnInit {
       console.log('log ',user)
       this.itemsLink = [
         { label: `${user.profile}`, icon: `pi ${ICON.userProfile}`, routerLink: '/user/profile'},
-        { label: `${user.orders}`, icon: `pi ${ICON.orders}`, routerLink: '/user/profile'},
+        { label: `${user.orders}`, icon: `pi ${ICON.orders}`, routerLink: '/user/orders'},
         { label: `${user.logout}`, icon: `pi ${ICON.logout}`, command: () => {}}
       ];
     });

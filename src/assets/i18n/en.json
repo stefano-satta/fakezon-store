@@ -11,7 +11,11 @@
     }
   },
   "user": {
-    "head_message": "Welcome {{ fullname }}!"
+    "head_message": "Welcome {{ fullname }}!",
+    "orders": {
+      "title": "Orders",
+      "no_orders": "No orders yet!"
+    }
   },
   "product": {
     "categories": {

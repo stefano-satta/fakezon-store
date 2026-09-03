@@ -27,12 +27,13 @@ export class ProductDetailsPage implements OnInit {
   }
 
   getProductDetails(id: number) {
-    this.productService.getProductByID(id).subscribe(product => {
-      console.log('product api ', product);
-      if (!product) {
-        this.router.navigate(['/']);
-      }
-      this.product.set(product);
+    this.productService.getProductByID(id)
+      .subscribe(product => {
+        console.log('product api ', product);
+        if (!product) {
+          this.router.navigate(['/']);
+        }
+        this.product.set(product);
     })
   }
 }

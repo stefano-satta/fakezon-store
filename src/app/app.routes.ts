@@ -7,6 +7,7 @@ import {UserProfile} from './pages/user-profile/user-profile';
 import {AllProductsSearch} from './pages/all-products-search/all-products-search';
 import {CartPage} from './pages/cart-page/cart-page';
 import {ErrorMaintenance} from './pages/error-maintenance-page/error-maintenance';
+import {OrdersPage} from './pages/orders-page/orders-page';
 
 
 export const routes: Routes = [
@@ -19,6 +20,7 @@ export const routes: Routes = [
       { path: 'product/search', component:  AllProductsSearch },
       { path: 'product/:id', component:  ProductDetailsPage },
       { path: 'user/profile', component:  UserProfile },
+      { path: 'user/orders', component:  OrdersPage },
     ]
   },
   { path: 'error-maintenance', component: ErrorMaintenance},

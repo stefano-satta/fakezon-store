@@ -20,3 +20,9 @@ body {
 .p-carousel-indicator-active .p-carousel-indicator-button {
   background: #0ea5e9 !important;
 }
+
+.centered-absolute {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}

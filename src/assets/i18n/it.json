@@ -11,7 +11,11 @@
     }
   },
   "user": {
-    "head_message": "Bentornato {{ fullname }}!"
+    "head_message": "Bentornato {{ fullname }}!",
+    "orders": {
+      "title": "Ordini",
+      "no_orders": "Nessun ordine presente"
+    }
   },
   "product": {
     "categories": {
