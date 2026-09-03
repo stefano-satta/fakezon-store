@@ -10,6 +10,9 @@
       "product_search": "Products"
     }
   },
+  "actions": {
+    "change_language": "Change language"
+  },
   "user": {
     "head_message": "Welcome {{ fullname }}!",
     "orders": {
