@@ -15,9 +15,7 @@ export class CartService extends AbstractHttpService implements OnInit {
   //cart = computed(() => this.productService.allProducts().slice(0,10))
   cart = signal<Product[]>([]);
 
-  ngOnInit() {
-    console.log('service cart', this.cart());
-  }
+  ngOnInit() { }
 
   getCart() {
     const url = this.buildApiUrl(environment.api.GET_CART, {id: 2});
@@ -28,7 +26,6 @@ export class CartService extends AbstractHttpService implements OnInit {
     const alreadyInTheCart = this.cart().some(cart => cart.id === product.id);
     let updatedCart: Product[] = [];
     if (alreadyInTheCart) {
-      console.log('dentro cart')
       updatedCart = this.cart().map((prod: Product) => {
         return (prod.id === product.id) ? {...prod, quantity: Number(prod.quantity! + 1)} : prod;
       })
@@ -40,13 +37,11 @@ export class CartService extends AbstractHttpService implements OnInit {
 
     this.messageService.add({severity: 'info', summary: 'Info', detail: this.translateService.instant('cart.added_to_cart')});
     this.totalToPay();
-    console.log(this.cart());
   }
 
   removeProduct(idProduct: number) {
     this.cart.update(prevCart => prevCart.filter(product => product.id !== idProduct));
     this.totalToPay();
-    console.log(this.cart());
   }
 
   changeQuantityProductById(idProduct: number, qty: number) {

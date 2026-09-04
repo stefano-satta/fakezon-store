@@ -41,7 +41,6 @@ export class Navbar implements OnInit {
   ngOnInit() {
     this.translateService.stream('navbar.user_menu')
       .subscribe((user: UserMenuItem) => {
-        console.log('log ',user)
         this.itemsLink = [
           { label: `${user.profile}`, icon: `pi ${ICON.userProfile}`, routerLink: '/user/profile'},
           { label: `${user.orders}`, icon: `pi ${ICON.orders}`, routerLink: '/user/orders'},

@@ -16,9 +16,7 @@ export class GratefulPaymentModal implements OnInit {
   private readonly refModal = inject(DynamicDialogRef);
   private readonly configModal = inject(DynamicDialogConfig);
 
-  ngOnInit() {
-    console.log('data passed child ', this.configModal);
-  }
+  ngOnInit() { }
 
   onConfirm(): void {
     this.refModal.close({confirmed: true});

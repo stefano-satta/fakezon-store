@@ -21,7 +21,6 @@ export class MobileMenu {
 
   toggleDrawer() {
     this.isOpenDrawer.update( prevState => !prevState );
-    console.log('toggle drawer mobile', this.isOpenDrawer());
   }
 
   goToProfilePage() {

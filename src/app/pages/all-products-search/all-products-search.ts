@@ -34,10 +34,8 @@ export class AllProductsSearch implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(qparams => {
-      console.log('query', qparams);
       if (Object.keys(qparams).length === 0) {
         this.filteredProducts.set(this.getAllProds());
-        console.log(' inside ', this.filteredProducts())
       } else {
         const { category } = qparams;
         this.filterProductByCategory(category);
