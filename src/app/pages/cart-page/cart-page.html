@@ -12,17 +12,17 @@
       </div>
     } @else {
       <div class="flex flex-wrap">
-        <div class="bg-white rounded-2xl me-3 flex-1">
+        <div class="bg-white rounded-2xl lg:me-3 flex-1">
           @for(item of currentCart(); track item.id) {
             <div class="flex flex-row items-center justify-start px-8 py-6">
-              <div class="w-20">
+              <div class="w-10 md:w-20">
                 <img [src]="item.image" alt="" />
               </div>
-              <div class="flex flex-col px-8 w-full">
-                <h3 class="text-lg">{{ item.title }}</h3>
-                <div class="flex justify-between mt-3 items-center">
-                  <div class="flex-1 font-medium text-lg">{{ item.price | currency: 'EUR' }}</div>
-                  <div class="w-45 flex items-center">
+              <div class="flex flex-col px-8 md:w-full">
+                <h3 class="text-md md:text-lg">{{ item.title }}</h3>
+                <div class="flex flex-col md:flex-row justify-between mt-3 items-center w-full">
+                  <div class="self-start text-lg text-left">{{ item.price | currency: 'EUR' }}</div>
+                  <div class="w-45 flex items-center self-end md:self-none mt-4 md:mt-0">
                     <p-button [rounded]="true" [text]="true" severity="danger" (click)="remove(item.id)" class="me-3">
                       <app-icon [name]="ICON.trash"/>
                     </p-button>
@@ -50,7 +50,8 @@
             </div>
           }
         </div>
-        <div class="bg-white rounded-2xl w-100 h-100 px-8 py-6 sticky top-[30px]">
+
+        <div class="bg-white rounded-2xl w-full lg:w-100 lg:h-100 px-8 py-6 sticky top-[30px] mt-4 lg:mt-0">
           <h3 class="mb-8 text-2xl font-medium">{{ 'cart.summary' | translate }}</h3>
           <div class="flex justify-between mb-4">
             <span>{{ 'cart.sub_total' | translate }}:</span>
